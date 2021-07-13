@@ -24,7 +24,7 @@
                     {% if item.thumbnail %}
                     <img class="card-img-top" src="{{ item.thumbnail.url | default_if_none:'#' }}" alt="{{ item.title }}"/>
                     {% else %}
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/46.jpg"
                         alt="{{ item.title }}"/>
                     {% endif %}
                     <a href="{% url 'myapp:post_detail' item.id %}">
