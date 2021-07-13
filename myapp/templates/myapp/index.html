@@ -1,0 +1,64 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<!-- Start your project here-->
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h2 class="display-4">{{ request.site.siteconfig.top_title }}</h2>
+        <p class="lead">{{ request.site.siteconfig.top_subtitle }}</p>
+    </div>
+</div>
+
+<div class='row'>
+    <!-- Card deck -->
+    <div class="card-deck">
+
+        {% for item in post_list %}
+        <div class='col-md-4'>
+            <!-- Card -->
+            <div class="card mb-4">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    {% if item.thumbnail %}
+                    <img class="card-img-top" src="{{ item.thumbnail.url | default_if_none:'#' }}" alt="{{ item.title }}"/>
+                    {% else %}
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                        alt="{{ item.title }}"/>
+                    {% endif %}
+                    <a href="{% url 'myapp:post_detail' item.id %}">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title">{{ item.title }}<small>{{ item.author }}</small></h4>
+
+                    <!--Category-->
+                    <p>{{ item.category }}</p>
+
+                    <!--Text-->
+                    <p class="card-text">{{ item.content | safe | truncatechars_html:30 }}</p>
+
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                    <a href="{% url 'myapp:post_detail' item.id %}" type="button"
+                        class="btn btn-light-blue btn-md">もっと読む</a>
+
+                </div>
+
+            </div>
+            <!-- Card -->
+        </div>
+        {% endfor %}
+
+    </div>
+    <!-- Card deck -->
+
+</div>
+
+<!-- Jumbotron -->
+{% endblock %}

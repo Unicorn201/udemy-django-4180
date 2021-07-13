@@ -1,0 +1,47 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-9">
+        <br>
+        <h2>Post入力内容の確認</h2>
+        <br>
+        <div class="ui segment">
+            <div class="content">
+                <h5>この内容でいいですか？</h5>
+                <table class="ui celled table table table-hover">
+                    <tr>
+                        <td>タイトル</td>
+                        <td>{{ form.title.value }}</td>
+                    </tr>
+                    <tr>
+                        <td>カテゴリー</td>
+                        <td>{{ form.cleaned_data.category }}</td>
+                    </tr>
+                    <tr>
+                        <td>サムネイル画像</td>
+                        <td>{{ form.thumbnail }}</td>
+                    </tr>
+                    <tr>
+                        <td>内容</td>
+                        <td>{{ form.content.value | linebreaksbr }}</td>
+                    </tr>
+                </table>
+
+                <form class="ui form" action="" method="post" enctype= "multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field.as_hidden }}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary rounded-pill" name="next" value="back">戻る</button>
+                    <button type="submit" class="btn btn-success rounded-pill" name="next" value="create">保存</button>
+
+                    <br>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

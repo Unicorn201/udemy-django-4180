@@ -1,0 +1,67 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-9">
+        <br>
+        <!-- Card -->
+        <div class="card">
+
+            <!-- Card image -->
+            {% if object.thumbnail %}
+            <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
+            {% else %}
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/46.jpg"
+                        alt="{{ item.title }}"/>
+            {% endif %}
+            <!-- Card content -->
+            <div class="card-body">
+
+                <!-- Title -->
+                <h5 class="card-title">{{ object.title }}</h5>
+
+                <!-- category -->
+                <h6 class="card-title">{{ object.category }}</h6>
+
+                <!-- text -->
+                <p class="card-text">
+                    {{ object.content | safe | linebreaksbr | urlize}}
+                </p>
+                <!-- Button-->
+                <a class="btn rounded-pill" href="{% url 'myapp:like_add' object.pk %}"
+                    style="background-color:#FF6699; color:white;">お気に入りに入れる</a>
+                <hr>
+                <a href= "javascript:void(0); " onclick= "window.history.back(); " class = "btn btn-outline-dark">戻る</a>
+                {% if object.author == request.user %} 
+                <a href="{% url 'myapp:post_update' object.pk %}" class="btn btn-primary rounded-pill">更新</a>
+                <a href="{% url 'myapp:post_delete' object.pk %}" class="btn btn-danger rounded-pill">削除</a>
+                {% endif %}
+
+                <!-- だけし追加 -->
+                <a href="{% url 'myapp:index' %}" class="btn btn-light rounded-pill">ホームに戻る</a>
+
+            </div>
+
+        </div>
+        <!-- Card -->
+        <br>
+    </div>
+    <div class="col-md-3">
+        <br>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.category }}</h5>
+                <p>このカテゴリの他の記事</p>
+            </div>
+            <ul class="list-group">
+                {% for item in category_posts %}
+                <li class="list-group-item"><a href="{% url 'myapp:post_detail' item.id%}">{{ item.title}}</a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
