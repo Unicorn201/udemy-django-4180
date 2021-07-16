@@ -27,6 +27,10 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def like_count(self):
+        n = Like.objects.filter(post = self).count()
+        return n
+
     def __str__(self):
         return self.title
     """

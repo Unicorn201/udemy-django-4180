@@ -35,7 +35,7 @@ class Index(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data( **kwargs)
-        post_list = Post.objects.all().order_by('-created_at')
+        post_list = Post.objects.all().order_by('-created_at')[:6]
         context = {
             'post_list': post_list,
         }
@@ -73,7 +73,7 @@ class PostDetail(DetailView):
     
     def get_context_data(self, *args, **kwargs):
         detail_data = Post.objects.get(id = self.kwargs['pk'])
-        category_posts = Post.objects.filter(category = detail_data.category).order_by('-created_at')[:5]
+        category_posts = Post.objects.filter(category = detail_data.category).order_by('-created_at')
         params = {
             'object': detail_data,
             'category_posts': category_posts,
@@ -114,7 +114,7 @@ class PostDelete(OnlyMyPostMixin, DeleteView):
 
 class PostList(ListView):
     model = Post
-    paginate_by = 5
+    paginate_by = 7
 
     def get_queryset(self):
         return Post.objects.all().order_by('-created_at')
