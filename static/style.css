@@ -1,9 +1,9 @@
 .jumbotron {
     background-image: url("World Hacker-logo_.jpg");
-    background-size: cover;
+    background-size:  100% auto;
     
-    background-position: center 50%;
-
+    background-position: center 55%;
+    background-repeat: no-repeat;
     height: 500px;
 }
 
