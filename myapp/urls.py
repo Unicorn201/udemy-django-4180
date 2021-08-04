@@ -23,5 +23,7 @@ urlpatterns = [
     path('category_list', views.CategoryList.as_view(), name='category_list'),
     path('category_detail/<str:name_en>', views.CategoryDetail.as_view(), name='category_detail'),
     path('search', views.Search, name='search'),
+
 ]
-print(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+
+# print(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

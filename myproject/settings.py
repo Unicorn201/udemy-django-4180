@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',    # この行を追加
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -151,7 +152,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['127.0.0.1','udemy-django-4180.herokuapp.com','gyoza-hungry-foolish.jpn.com']
 
-STATICFILES_DIRS = (   os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
