@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("World Hacker-logo_.jpg");
+    background-image: url("{{ STATIC_URL }}World Hacker-logo_.jpg");
     background-size: cover;
     
     background-position: center 50%;
