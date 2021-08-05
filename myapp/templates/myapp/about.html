@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+{% block title %}サイト概要 - {{ block.super }}{% endblock %}
+{% block content %}
+
+<div class="ui grid stackable">
+    <div class="eleven wide column">
+        <div class="ui breadcrumb">
+            <a href="{% url 'myapp:index' %}" class="section">ホーム</a>
+            <span class="divider">　▶　</span>
+            <a class="active section">サイト概要</a>
+        </div>
+        <div class="ui segment">
+            <div class="content">
+                <div class="header"><h3>このサイトはなに？</h3></div>
+                <p>はじめまして、ワタクシ、『<b>ぎょうざ</b>』と申します。</p>
+                <p>こちらのサイトはぎょうざの、ぎょうざによる、ぎょうざのためのブログWebアプリケーションになります。</p>
+                <p>ぎょうざが生きた証を、好きなことや生活ハックを共有する形で</p>
+                <p>ブログの名前をWorld Hackerと名を打って、開設せねばと思い立ちました。</p>
+                <p>...........................</p>
+                <p>...............</p>
+                <p>.......</p>
+                <p>ちなみに、みなさんが食べたことのある『餃子』についてのノウハウは、当サイトではいっさい身に付きませんのであしからず。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

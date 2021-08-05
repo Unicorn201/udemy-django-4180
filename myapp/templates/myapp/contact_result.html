@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="ui breadcrumb">
+    <a href="{% url 'myapp:index' %}" class="section">ホーム</a>
+    <span class="divider">　▶　</span>
+    <a class="active section">お問い合わせ</a>
+</div>
+{{ success }}
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

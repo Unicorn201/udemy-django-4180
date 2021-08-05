@@ -39,7 +39,7 @@
 
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark blue">
+    <nav class="navbar navbar-expand-lg navbar-dark purple">
 
         <!-- Navbar brand -->
         <a class="navbar-brand" href="/">ぎょうざブログ</a>
@@ -56,17 +56,15 @@
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'myapp:index'%}">ホーム
-                        <span class="sr-only">(current)</span>
+                    <a class="nav-link" href="{% url 'myapp:index'%}">ホーム<span class="sr-only">(current)</span>
+                        
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/">管理画面</a>
-                </li>
+                
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="account" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Account</a>
+                        aria-expanded="false">アカウント</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="account">
                         {% if request.user.is_authenticated %}
                         <a class="dropdown-item">{{ request.user }}</a>
@@ -85,7 +83,7 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Post</a>
+                        aria-haspopup="true" aria-expanded="false">投稿</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{% url 'myapp:post_create'%}">新規投稿</a>
                         <a class="dropdown-item" href="{% url 'myapp:post_list'%}">投稿一覧</a>
@@ -96,7 +94,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Category</a>
+                        aria-haspopup="true" aria-expanded="false">カテゴリー</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         {% for item in category_list %}
                         <a class="dropdown-item" href="{% url 'myapp:category_detail' item.name_en %}">{{ item.name }}</a>
@@ -106,6 +104,9 @@
                     </div>
                 </li>
 
+                <li class="nav-item">
+                    <a href="/admin/" class="nav-link waves-light" mdbWavesEffect><i class="fas fa-user-cog"></i>管理画面</a>
+                </li>
 
             </ul>
             <!-- Links -->
@@ -139,7 +140,7 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
+    <footer class="page-footer font-small purple pt-4">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -151,18 +152,50 @@
                 <div class="col-md-6 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <h5 class="text-uppercase">Footer Content</h5>
-                    <p>Here you can use rows and columns to organize your footer content.</p>
+                    <div class = "caution_contents">
+                    <h5 class="text-uppercase"><b>注意事項</b></h5>   
 
+                    <p>当サイトでは、アクセス解析のため「Googleアナリティクス」を使用しています。</p>
+                    <p>このGoogleアナリティクスはデータの収集のためにCookieを使用しています。</p>
+                    <p>このデータは匿名で収集されており、個人を特定するものではありません。</p>
+                    <p>この機能はCookieを無効にすることで収集を拒否することが出来ますので</p>
+                    <p>お使いのブラウザの設定をご確認ください。</p>
+                    <p>この規約に関しての詳細は<a href = "https://marketingplatform.google.com/about/analytics/terms/jp/"><u>Googleアナリティクスサービス利用規約</u></a>や
+                        <a href = "https://policies.google.com/technologies/ads?hl=ja"><u>Googleポリシーと規約</u></a>をご覧ください。</p>
+                    </div>
                 </div>
                 <!-- Grid column -->
 
                 <hr class="clearfix w-100 d-md-none pb-3">
 
                 <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
+                <div class="col-md-6 mb-md-0 mb-3">
 
                     <!-- Links -->
+                    <h5 class="text-uppercase">リンク集</h5>
+
+                    <ul class="list-styled" >
+                        <li>
+                            <a href="{% url 'myapp:about' %}" >サイト概要</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'myapp:contents_policy' %}">コンテンツポリシー</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'myapp:terms' %}">利用規約</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'myapp:contact_me' %}">お問い合わせ</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column 
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                     Links 
                     <h5 class="text-uppercase">Links</h5>
 
                     <ul class="list-unstyled">
@@ -181,31 +214,7 @@
                     </ul>
 
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
+                Grid column -->
 
             </div>
             <!-- Grid row -->

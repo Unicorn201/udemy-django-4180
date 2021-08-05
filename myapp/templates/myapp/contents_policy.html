@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+{% block title %}コンテンツポリシー - {{ block.super }}{% endblock %}
+{% block content %}
+<div class="ui grid stackable">
+    <div class="eleven wide column">
+        <div class="ui breadcrumb">
+            <a href="{% url 'myapp:index' %}" class="section">ホーム</a>
+            <span class="divider">　▶　</span>
+            <a class="active section">コンテンツポリシー</a>
+        </div>
+        <div class="ui segment">
+            <div class="content">
+                <div class="header"><h3>コンテンツポリシー</h3></div>
+                <p>あんなことやこんなことに情報を使います。などなど</p>
+                <p>...............</p>
+                <p>...........</p>
+                <p>.......</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
