@@ -150,12 +150,24 @@ DATABASES['default'] = dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['127.0.0.1','udemy-django-4180.herokuapp.com','gyoza-hungry-foolish.jpn.com']
+# ↓本番環境のときに使う
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ↓開発環境のときに使う
 # STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 
-# ↓本番環境のときに使う
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 開発環境のときにメール送信内容をコンソールに表示する
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# 本番でロリポップサーバーメールで作成したメールアドレスで送信する場合
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.lolipop.jp'
+
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+
 
 DEBUG = False
 
@@ -166,6 +178,9 @@ except ImportError:
 
 if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+    
     AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
     
