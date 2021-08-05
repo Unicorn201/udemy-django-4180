@@ -1,8 +1,9 @@
 from django.urls import path, include
 from . import views
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.conf.urls.static import static
-
+from .views import ContactFormView, ContactResultView
 
 app_name = 'myapp'
 
@@ -24,6 +25,14 @@ urlpatterns = [
     path('category_detail/<str:name_en>', views.CategoryDetail.as_view(), name='category_detail'),
     path('search', views.Search, name='search'),
 
+    # footer links
+    path('about', TemplateView.as_view(template_name='myapp/about.html'), name='about'),
+    path('terms', TemplateView.as_view(template_name='myapp/terms.html'), name='terms'),
+    path('contents_policy', TemplateView.as_view(template_name='myapp/contents_policy.html'), name='contents_policy'),
+    path('contact_me', ContactFormView.as_view(), name='contact_me'),
+    path('contact_me/contact_result', ContactResultView.as_view(), name='contact_result'),
+    
+    # path('policy/', TemplateView.as_view(template_name='base/policy.html'), name='policy'),
 ]
 
 # print(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
