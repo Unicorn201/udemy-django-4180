@@ -165,6 +165,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.lolipop.jp'
 
 EMAIL_PORT = '465'
+
 EMAIL_USE_SSL = True
 
 
