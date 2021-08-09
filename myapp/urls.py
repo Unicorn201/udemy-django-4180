@@ -4,10 +4,14 @@ from django.conf import settings
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from .views import ContactFormView, ContactResultView
+from .admin import mypage_site
 
 app_name = 'myapp'
 
 urlpatterns = [
+    # ユーザーマイページ
+    path('mypage/', mypage_site.urls),
+
     path('', views.Index.as_view(), name='index'),
     # path('', include('mayapp.urls')),
     path('post_create', views.PostCreate.as_view(), name='post_create'),
@@ -31,8 +35,9 @@ urlpatterns = [
     path('contents_policy', TemplateView.as_view(template_name='myapp/contents_policy.html'), name='contents_policy'),
     path('contact_me', ContactFormView.as_view(), name='contact_me'),
     path('contact_me/contact_result', ContactResultView.as_view(), name='contact_result'),
-    
     # path('policy/', TemplateView.as_view(template_name='base/policy.html'), name='policy'),
+
+
 ]
 
 # print(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

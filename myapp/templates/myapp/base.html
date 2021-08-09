@@ -104,14 +104,15 @@
                         <a class="dropdown-item" href="{% url 'myapp:category_detail' item.name_en %}">{{ item.name }}</a>
                         {% endfor %}
                         <hr>
-                        <a class="dropdown-item" href="{% url 'myapp:category_list'%}">カテゴリ一覧</a>
+                        <a class="dropdown-item" href="{% url 'myapp:category_list' %}">カテゴリ一覧</a>
                     </div>
                 </li>
-
+                {% if request.user.is_superuser %}
                 <li class="nav-item">
-                    <a href="/admin/" class="nav-link waves-light" mdbWavesEffect><i class="fas fa-user-cog"></i>管理画面</a>
+                    <a href="/staff-admin/" class="nav-link waves-light" mdbWavesEffect><i class="fas fa-user-cog"></i>管理画面</a>
                 </li>
-
+                {% endif %}
+                
             </ul>
             <!-- Links -->
 
