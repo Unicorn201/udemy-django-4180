@@ -23,6 +23,10 @@
 }
 
 #carouselIndicators {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    white-space: nowrap;
     margin-top: 10px;
     margin-bottom: 10px;
 }
