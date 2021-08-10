@@ -1,17 +1,28 @@
 .jumbotron {
     background-image: url("World Hacker-logo_.jpg");
-    background-size:  100% auto;
-    
+    background-size: 100% auto;
+
     background-position: center 55%;
     background-repeat: no-repeat;
     height: 500px;
 }
 
-.caution_contents p{
+.caution_contents p {
     color: whitesmoke;
-    margin-left:10px;
-    margin-right:10px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 0;
-
 }
-  
+
+.cover-text {
+    position: absolute;
+    padding: 50px;
+    font-size: 100px;
+    color: violet;
+    z-index: 1; /* ADD */
+}
+
+#carouselIndicators {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

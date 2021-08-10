@@ -1,14 +1,46 @@
 {% extends 'myapp/base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Start your project here-->
-<!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h2 class="display-4">{{ request.site.siteconfig.top_title }}</h2>
-        <p class="lead">{{ request.site.siteconfig.top_subtitle }}</p>
-    </div>
+<!--
+<div class="cover-text">
+    <h2 class="display-4">{{ request.site.siteconfig.top_title }}</h2>
+  <p class="lead">{{ request.site.siteconfig.top_subtitle }}</p>
 </div>
+-->
+
+<!-- Carousel wrapper -->
+<div id="carouselIndicators" class="carousel slide carousel-dark" data-ride="carousel" data-interval="7000"
+    data-pause="hover">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'World Hacker-logo_.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'World Hacker-logo_.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'World Hacker-logo_.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <!-- 上記のid値とdata-targetは一致してないといけない -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselIndicators" data-slide-to="2"></li>
+    </ol>
+    <!-- 上記のid値とhrefは一致してないといけない -->
+    <a href="#carouselIndicators" class="carousel-control-prev" data-slide="prev">
+        <span><i style="font-size: 60px; color: lightgray;" class="fas fa-caret-left" aria-hidden="true"></i></span>
+        <span class="sr-only" style="font-size: 60px; color: gray;">前の画像へ</span>
+    </a>
+    <a href="#carouselIndicators" class="carousel-control-next" data-slide="next">
+        <span><i style="font-size: 60px; color: lightgray;" class="fas fa-caret-right" aria-hidden="true"></i></span>
+        <span class="sr-only" style="font-size: 60px; color: gray;">次の画像へ</span>
+    </a>
+</div>
+<!-- Carousel wrapper -->
 
 <div class='row'>
     <!-- Card deck -->
@@ -22,10 +54,11 @@
                 <!--Card image-->
                 <div class="view overlay">
                     {% if item.thumbnail %}
-                    <img class="card-img-top" src="{{ item.thumbnail.url | default_if_none:'#' }}" alt="{{ item.title }}"/>
+                    <img class="card-img-top" src="{{ item.thumbnail.url | default_if_none:'#' }}"
+                        alt="{{ item.title }}" />
                     {% else %}
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/46.jpg"
-                        alt="{{ item.title }}"/>
+                        alt="{{ item.title }}" />
                     {% endif %}
                     <a href="{% url 'myapp:post_detail' item.id %}">
                         <div class="mask rgba-white-slight"></div>
@@ -48,12 +81,14 @@
                     <a href="{% url 'myapp:post_detail' item.id %}" type="button"
                         class="btn btn-secondary btn-lg">もっと読む</a>
                     <br>
-                <div style="text-align: right"><i class="fas fa-heart" style=" color:palevioletred;"></i>&nbsp;{{ item.like_count }}</div>
+                    <div style="text-align: right">
+                        <i class="fas fa-heart" style=" color:palevioletred;"></i>&nbsp;{{ item.like_count }}
+                    </div>
                 </div>
-                                
+
                 <!-- Card footer -->
                 <div class="card-footer text-muted text-center mt-4">by <small>{{ item.author }}</small>
-                    at <small>{{ item.created_at }}</small>                
+                    at <small>{{ item.created_at }}</small>
                 </div>
 
             </div>
@@ -64,7 +99,7 @@
     </div>
     <!-- Card deck -->
     <a type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark"
-        href ="{% url 'myapp:post_list' %}" >すべての記事を見る</a>
+        href="{% url 'myapp:post_list' %}">すべての記事を見る</a>
 
 </div>
 <br>

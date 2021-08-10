@@ -15,15 +15,15 @@
         gtag('config', 'UA-202046552-1');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6237837293601032"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon-180x180_.png' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon_.ico' %}">
 
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ request.site.siteconfig.meta_title }}</title>
@@ -61,10 +61,10 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'myapp:index'%}">ホーム<span class="sr-only">(current)</span>
-                        
+
                     </a>
                 </li>
-                
+
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="account" data-toggle="dropdown" aria-haspopup="true"
@@ -112,7 +112,7 @@
                     <a href="/staff-admin/" class="nav-link waves-light" mdbWavesEffect><i class="fas fa-user-cog"></i>管理画面</a>
                 </li>
                 {% endif %}
-                
+
             </ul>
             <!-- Links -->
 
@@ -157,16 +157,19 @@
                 <div class="col-md-6 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <div class = "caution_contents">
-                    <h5 class="text-uppercase"><b>注意事項</b></h5>   
+                    <div class="caution_contents">
+                        <h5 class="text-uppercase"><b>注意事項</b></h5>
 
-                    <p>当サイトでは、アクセス解析のため「Googleアナリティクス」を使用しています。</p>
-                    <p>このGoogleアナリティクスはデータの収集のためにCookieを使用しています。</p>
-                    <p>このデータは匿名で収集されており、個人を特定するものではありません。</p>
-                    <p>この機能はCookieを無効にすることで収集を拒否することが出来ますので</p>
-                    <p>お使いのブラウザの設定をご確認ください。</p>
-                    <p>この規約に関しての詳細は<a href = "https://marketingplatform.google.com/about/analytics/terms/jp/"><u>Googleアナリティクスサービス利用規約</u></a>や
-                        <a href = "https://policies.google.com/technologies/ads?hl=ja"><u>Googleポリシーと規約</u></a>をご覧ください。</p>
+                        <p>当サイトでは、アクセス解析のため「Googleアナリティクス」を使用しています。</p>
+                        <p>このGoogleアナリティクスはデータの収集のためにCookieを使用しています。</p>
+                        <p>このデータは匿名で収集されており、個人を特定するものではありません。</p>
+                        <p>この機能はCookieを無効にすることで収集を拒否することが出来ますので</p>
+                        <p>お使いのブラウザの設定をご確認ください。</p>
+                        <p>この規約に関しての詳細は<a 
+                            href="https://marketingplatform.google.com/about/analytics/terms/jp/"><u>Googleアナリティクスサービス利用規約</u></a>や
+                            <a
+                            href="https://policies.google.com/technologies/ads?hl=ja"><u>Googleポリシーと規約</u></a>をご覧ください。
+                        </p>
                     </div>
                 </div>
                 <!-- Grid column -->
@@ -179,16 +182,16 @@
                     <!-- Links -->
                     <h5 class="text-uppercase">リンク集</h5>
 
-                    <ul class="list-styled" >
+                    <ul class="list-styled">
                         <li>
-                            <a href="{% url 'myapp:about' %}" ><u>サイト概要</u></a>
+                            <a href="{% url 'myapp:about' %}"><u>サイト概要</u></a>
                         </li>
                         <li>
                             <a href="{% url 'myapp:terms' %}"><u>利用規約</u></a>
                         </li>
                         <li>
                             <a href="{% url 'myapp:contents_policy' %}"><u>コンテンツポリシー</u></a>
-                        </li>                        
+                        </li>
                         <li>
                             <a href="{% url 'myapp:contact_me' %}"><u>お問い合わせ</u></a>
                         </li>
