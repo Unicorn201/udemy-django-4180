@@ -29,7 +29,7 @@
                 </p>
                 <!-- Button-->
                 <a class="btn rounded-pill" href="{% url 'myapp:like_add' object.pk %}"
-                    style="background-color:#FF6699; color:white;">お気に入りに入れる</a>
+                    style="background-color:#FF6699; color:white;">お気に入り</a>
                 <hr>
                 <a href= "javascript:void(0); " onclick= "window.history.back(); " class = "btn btn-outline-dark">戻る</a>
                 {% if object.author == request.user %} 
@@ -38,7 +38,7 @@
                 {% endif %}
 
                 <!-- だけし追加 -->
-                <a href="{% url 'myapp:index' %}" class="btn btn-light rounded-pill">ホームに戻る</a>
+                <a href="{% url 'myapp:index' %}" class="btn btn-light rounded-pill" style="color:black">トップへ</a>
 
             </div>
             <!-- Card footer -->
