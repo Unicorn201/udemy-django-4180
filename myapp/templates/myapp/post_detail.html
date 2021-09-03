@@ -27,9 +27,14 @@
                 <p class="card-text">
                     {{ object.content | safe | linebreaksbr | urlize}}
                 </p>
+                <div style="text-align: right">
+                    <i class="fas fa-heart" style=" color:palevioletred;"></i>&nbsp;{{ object.like_count }}
+                </div> 
                 <!-- Button-->
+                {% if request.user.is_active %} 
                 <a class="btn rounded-pill" href="{% url 'myapp:like_add' object.pk %}"
                     style="background-color:#FF6699; color:white;">お気に入り</a>
+                {% endif %}               
                 <hr>
                 <a href= "javascript:void(0); " onclick= "window.history.back(); " class = "btn btn-outline-dark">戻る</a>
                 {% if object.author == request.user %} 
