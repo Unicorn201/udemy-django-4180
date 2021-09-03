@@ -5,7 +5,7 @@
 }
 
 /* カードのスタイル */
-.card .card-body a{
+.card .card-body a {
     position: relative;
     display: inline-block;
     padding: 17px 20px;
@@ -22,15 +22,15 @@
     cursor: pointer;
     margin: 5px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
     border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 /* カテゴリ一覧の表示ボタン */
@@ -41,7 +41,7 @@
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    
+
     width: 300px;
     font-size: 16px;
     font-weight: 600;
@@ -49,15 +49,15 @@
     cursor: pointer;
     margin: 5px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
     border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .button-end .btn {
@@ -68,16 +68,22 @@
 
 .btn:hover {
     background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .btn:focus {
     outline: none;
 }
 .btn.btn-secondary {
-    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    background-image: linear-gradient(
+        to right,
+        #6253e1,
+        #852d91,
+        #a3a1ff,
+        #f24645
+    );
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
@@ -112,3 +118,107 @@
     margin-bottom: 20px;
 }
 
+/* テーブル表示のデザイン*/
+table {
+    line-height: 1.25;
+    width: 650px;
+    border: none;
+    border-top: solid 1px #666;
+    border-bottom: solid 1px #666;
+    border-collapse: collapse;
+    border-spacing: 0 10px;
+    background: #f5f5f5;
+}
+table tr {
+    background-color: #fff;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tbody tr:hover {
+    background-color: #fffae9;
+}
+table th,
+table td {
+    padding: 0.35em 1em;
+    border-bottom: 1px solid #eee;
+}
+table thead th {
+    text-align: center;
+    font-size: 0.85em;
+    padding: 1em;
+}
+table thead tr {
+    background-color: #6253e1;
+    color: #fff;
+}
+table tbody th {
+    text-align: left;
+    font-size: 0.8em;
+}
+.title {
+    text-align: left;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+.content {
+    text-align: left;
+    color: #000;
+}
+.date {
+    text-align: left;
+    color: #000;
+}
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+        width: 100%;
+    }
+    table th {
+        background-color: #6253e1;
+        display: block;
+        border-right: pink;
+    }
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    table tr {
+        display: block;
+        margin-bottom: 0.625em;
+        border: 1px solid #6253e1;
+    }
+    table td {
+        border-bottom: 1px dotted #bbb;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+        position: relative;
+        padding: 1.5em 1em 1.5em 4em;
+        border-right: none;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+        color: #000;
+    }
+    table td:last-child {
+        border-bottom: 0;
+    }
+    table tbody th {
+        color: #fff;
+        padding: 1em;
+    }
+    table tr:nth-child(even) {
+        background-color: #fff;
+    }
+}

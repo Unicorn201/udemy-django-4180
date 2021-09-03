@@ -10,17 +10,17 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th width="200px">タイトル</th>
-                    <th>内容</th>
-                    <th width="200px">作成日時<br>更新日時</th>
+                    <th scope="col">タイトル</th>
+                    <th scope="col">内容</th>
+                    <th scope="col">作成日時<br>更新日時</th>
                 </tr>
             </thead>
             <tbody>
                 {% for item in post_list %}
                 <tr>
-                    <td><a href="{% url 'myapp:post_detail' item.pk %}">{{ item.title }}</a></td>
-                    <td>{{ item.content | linebreaksbr | safe | truncatechars_html:30  }}</td>
-                    <td>{{ item.created_at }}
+                    <td class="title"><a href="{% url 'myapp:post_detail' item.pk %}" style="border-bottom: solid 1px black;">{{ item.title }}</a></td>
+                    <td class="content">{{ item.content | linebreaksbr | safe | truncatechars_html:30  }}</td>
+                    <td class="date">{{ item.created_at }}
                         <br>
                         {{ item.updated_at }}</td>
                 </tr>

@@ -7,12 +7,12 @@
         <h2>{{ object.name }}</h2>
         <hr>
         <br>
-        <ul class = "list-group">
+        <li class = "list-group list-group-numbered">
             {% for item in category_posts %}
-            <li class= "list-group-item"><a href="{% url 'myapp:post_detail' item.id %}">{{ item.title }}</a></li>
+            <li class= "list-group-item list-group-item-action"><a href="{% url 'myapp:post_detail' item.id %}" style="border-bottom: solid 1px blue;">{{ item.title }}</a></li>
                 
             {% endfor %}
-        </ul>
+        </li>
         
         <br>
         <br>
