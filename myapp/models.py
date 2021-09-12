@@ -27,7 +27,7 @@ class Post(models.Model):
     thumbnail = models.ImageField(upload_to='images/', blank=True)
     thumbnail_preview = ImageSpecField(source='thumbnail',
                                       processors=[ResizeToFill(200, 100)],
-                                      format=['JPEG', 'PNG'],
+                                      format='PNG',
                                       options={'quality': 60}
                                       )
     created_at = models.DateTimeField(auto_now_add=True)
