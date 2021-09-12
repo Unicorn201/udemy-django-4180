@@ -2,25 +2,31 @@
 {% block title %}お問い合わせ - {{ block.super }}{% endblock %}
 {% block content %}
 <div class="ui grid stackable">
-    <div class="eleven wide column">
-        <div class="ui breadcrumb">
-            <a href="{% url 'myapp:index' %}" class="section">ホーム</a>
-            <span class="divider">　▶　</span>
-            <a class="active section">お問い合わせ</a>
-        </div>
-        <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <h1>お問い合わせ</h1>
-
-                <form method="POST">
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  <button type="submit" class="btn btn-primary rounded-pill">送信</button>
-                </form>
-              </div>
-            </div>
-          </div>
+  <div class="eleven wide column">
+    <div class="ui breadcrumb">
+      <a href="{% url 'myapp:index' %}" class="section">ホーム</a>
+      <span class="divider">　▶　</span>
+      <a class="active section">お問い合わせ</a>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <h2 style = "color:red">＜お知らせ＞</h2>
+          <p style = "color:red">現在(2021/09/12 15:27)、下記問い合わせページよりメール送信が正常に行れない現象が発生しております。</p>
+          <p style = "color:red">お手数ですがお問い合わせのある方は、info@gyozablog.hungry.jp まで直接ご連絡ください。m(_ _)m</p>
+
+          
+          <h1>お問い合わせ</h1>
+
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary rounded-pill">送信</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

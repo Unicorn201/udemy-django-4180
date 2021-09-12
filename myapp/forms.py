@@ -83,13 +83,10 @@ class ContactForm(forms.Form):
         from_email = '{name} <{email}>'.format(name = name, email = email_address)
         recipient_list = [settings.EMAIL_HOST_USER]  # 受信者リスト
         try:
-            # send_mail(subject, inquiry, from_email, recipient_list)
-            message = EmailMessage(subject = name + "様からの問い合わせ",
-                                    body = inquiry,
-                                    from_email = from_email,
-                                    to = recipient_list,
+            # send_mail(subject = name + "様からの問い合わせ", message = inquiry, from_email = from_email, recipient_list = recipient_list)
+            message = EmailMessage(subject = name + "様からの問い合わせ", body = inquiry, from_email = from_email, to = recipient_list,)
                                     # cc = [from_email],
-                                    )
+            #                     )
             message.send()
 
         except BadHeaderError:
