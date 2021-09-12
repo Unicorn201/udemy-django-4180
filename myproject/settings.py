@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'sitemanage',
     'storages',
+    'django.forms',
+    'imagekit',
 ]
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 SITE_ID = 1
 
@@ -137,10 +140,8 @@ LOGIN_REDIRECT_URL = 'myapp:index'
 # LOGOUT_REDIRECT_URL = 'myapp:logout'
 
 
-
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
-
 
 
 # Herokuデプロイ用
@@ -156,7 +157,7 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 
 
 # 開発環境のときにメール送信内容をコンソールに表示する
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 

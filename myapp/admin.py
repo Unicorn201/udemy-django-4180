@@ -5,7 +5,7 @@ from .models import Post, Like, Category
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('id','author','thumbnail', 'title', 'category', 'created_at' )
+    list_display = ('id', 'author', 'thumbnail', 'title', 'category', 'created_at', )
     list_select_related = ('category', )
     list_display_links = ('title', )
     ordering = ('-created_at', )

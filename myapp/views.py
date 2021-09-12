@@ -47,7 +47,16 @@ class  PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     
+
+    def preview(request):
+        context_object_name = Post.objects.all()
+        return render(request, 'post_form.html',
+                      { 'image_list' : context_object_name}
+                      )
+
     # success_url = reverse_lazy('myapp:index')
+
+        
     def get_success_url(self):
         messages.success(self.request, 'Postを新規投稿しました！')
         return resolve_url('myapp:index')

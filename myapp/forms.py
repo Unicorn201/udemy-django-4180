@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
+# from .widgets import FileInputWithPreview
 
 # from django.core.files.storage import default_storage
 
@@ -12,8 +13,8 @@ from django.http import HttpResponse
 class  PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'category','content', 'thumbnail')
-
+        fields = ('thumbnail', 'title', 'category','content', )
+  
     def __init__(self, *args, **kyargs):
         super().__init__(*args, **kyargs)
         for field in self.fields.values():

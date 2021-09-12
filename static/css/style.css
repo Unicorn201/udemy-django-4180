@@ -3,7 +3,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+.default-preview-img {
+    max-width: 100%;
+    height: auto;
+}
 /* カードのスタイル */
 .card .card-body a {
     position: relative;

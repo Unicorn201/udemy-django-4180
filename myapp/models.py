@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 # from django.core.files.storage import default_storage
-
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 # Create your models here.
 class Category(models.Model):
@@ -24,6 +25,11 @@ class Post(models.Model):
     content = models.TextField('内容', max_length=1000)
     category = models.ForeignKey('Category', on_delete=models.PROTECT)
     thumbnail = models.ImageField(upload_to='images/', blank=True)
+    thumbnail_preview = ImageSpecField(source='thumbnail',
+                                      processors=[ResizeToFill(200, 100)],
+                                      format=['JPEG', 'PNG'],
+                                      options={'quality': 60}
+                                      )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
