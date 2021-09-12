@@ -225,3 +225,10 @@ table tbody th {
         background-color: #fff;
     }
 }
+
+.list_footer{
+    padding-left : 0;
+}
+.list_footer li{
+    list-style-type : none;
+}
