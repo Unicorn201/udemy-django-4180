@@ -13,7 +13,8 @@
               <div class="col-md-8">
                 <h1>お問い合わせ</h1>
 
-                <form method="POST">{% csrf_token %}
+                <form method="POST">
+                  {% csrf_token %}
                   {{ form.as_p }}
                   <button type="submit" class="btn btn-primary rounded-pill">送信</button>
                 </form>
