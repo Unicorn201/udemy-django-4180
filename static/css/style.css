@@ -1,12 +1,6 @@
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 
-#profile_about_gyoza .small.text-muted{
-    margin-top: -5px;
-}
-#profile_about_gyoza a{
-    margin-left: 0px;
-}
 
 #social-platforms {
     margin-top: 50px;
