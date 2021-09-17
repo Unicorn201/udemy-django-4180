@@ -73,7 +73,7 @@
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'myapp:index'%}">ホーム<span class="sr-only">(current)</span>
+                    <a class="nav-link" href="{% url 'myapp:index'%}"><i class="fas fa-home"></i>ホーム<span class="sr-only">(current)</span>
 
                     </a>
                 </li>
@@ -82,7 +82,7 @@
                 {% if request.user.is_active %}                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="account" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">アカウント</a>
+                        aria-expanded="false"><i class="fas fa-user-circle"></i>アカウント</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="account">
                             {% if request.user.is_authenticated %}
                             <a class="dropdown-item">{{ request.user }}</a>
@@ -101,10 +101,10 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">投稿</a>
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-newspaper"></i>投稿</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         {% if request.user.is_active %} 
-                        <a class="dropdown-item" href="{% url 'myapp:post_create'%}">新規投稿</a>
+                        <a class="dropdown-item" href="{% url 'myapp:post_create'%}"><i class="bi bi-file-earmark-post"></i>新規投稿</a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'myapp:post_list'%}">投稿一覧</a>
 
@@ -114,7 +114,8 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">カテゴリー</a>
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-tags"></i>カテゴリー</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         {% for item in category_list %}
                         <a class="dropdown-item" href="{% url 'myapp:category_detail' item.name_en %}">{{ item.name }}</a>
