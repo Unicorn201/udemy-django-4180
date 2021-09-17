@@ -5,7 +5,7 @@
     <div class="col-md-9">
         <br>
         <!-- Card -->
-        <div class="card">
+        <div class="card" id="detail_of_article">
 
             <!-- Card image -->
             {% if object.thumbnail %}
@@ -15,7 +15,7 @@
                         alt="{{ item.title }}"/>
             {% endif %}
             <!-- Card content -->
-            <div class="card-body">
+            <div class="card-body" id="button_post_detail">
 
                 <!-- Title -->
                 <h5 class="card-title">{{ object.title }}</h5>
@@ -27,6 +27,9 @@
                 <p class="card-text">
                     {{ object.content | safe | linebreaksbr | urlize}}
                 </p>
+                
+                {% include 'myapp/sns_button_for_top.html' %}
+
                 <div style="text-align: right">
                     <i class="fas fa-heart" style=" color:palevioletred;"></i>&nbsp;{{ object.like_count }}
                 </div> 
@@ -48,7 +51,8 @@
             </div>
             <!-- Card footer -->
             <div class="card-footer text-muted text-center mt-4">by <small>{{ object.author }}</small>
-                at <small>{{ object.created_at }}</small>                
+                at <small>{{ object.created_at }}</small>
+                
             </div>
 
         </div>

@@ -1,4 +1,5 @@
 {% extends 'myapp/base.html' %}
+{% load static %}
 {% block title %}サイト概要 - {{ block.super }}{% endblock %}
 {% block content %}
 
@@ -11,10 +12,33 @@
         </div>
         <div class="ui segment">
             <div class="content">
-                <div class="header"><h3>このサイトはなに？</h3></div>
-                <p>運営者：ぎょうざ</p>
-                <p>連絡先：info@gyozablog.hungry.jp</p>
+                <div class="header">
+                    <h3>このサイトはなに？</h3>
+                </div>
+                <p></p>
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-2">
+                            <img src="{% static 'world_hacker_logo.png' %}" class="card-img" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body" id="profile_about_gyoza">
+                                <h5 class="card-title">
+                                    運営者：ぎょうざ
+                                </h5>
+                                <p class="small text-muted">
+                                    連絡先：<a href="mailto:info@gyozablog.hungry.jp">info@gyozablog.hungry.jp</a>
+                                </p>
+                                <p class="card-text">
+                                    みなさまの非常食となるべく、日々精進しております。車と投資と自作PCを愛でることが生きがいです。
+                                    <br>どうぞ、召し上がれ～。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br>
+
                 <p>はじめまして、ワタクシ、『<b>ぎょうざ</b>』と申します。</p>
                 <p>こちらのサイトはぎょうざの、ぎょうざによる、ぎょうざのためのブログWebアプリケーションになります。</p>
                 <p>ぎょうざが生きた証を、好きなことや生活ハックを共有する形で</p>

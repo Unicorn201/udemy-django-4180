@@ -18,7 +18,7 @@
             <img src="{% static 'World Hacker-logo_.jpg' %}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="{% static 'coming-soon-.jpg' %}" class="d-block w-100" alt="...">
+            <img src="{% static 'hakone_ashinoko.jpg' %}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
             <img src="{% static 'comingsoon-.png' %}" class="d-block w-100" alt="...">
@@ -66,7 +66,7 @@
                 </div>
 
                 <!--Card content-->
-                <div class="card-body">
+                <div class="card-body" id = "index_btn">
 
                     <!--Title-->
                     <h4 class="card-title">{{ item.title }}</h4>
@@ -79,7 +79,7 @@
 
                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                     <a href="{% url 'myapp:post_detail' item.id %}" type="button"
-                        class="btn btn-secondary btn-lg">続きを読む</a>
+                        class="btn-hover color-7">続きを読む</a>
                     <br>
                     <div style="text-align: right">
                         <i class="fas fa-heart" style=" color:palevioletred;"></i>&nbsp;{{ item.like_count }}

@@ -1,14 +1,171 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+#profile_about_gyoza .small.text-muted{
+    margin-top: -20px;
+    margin-bottom: 0;
+}
+#profile_about_gyoza a{
+    margin-left: -15px;
+}
+/*
+#social-platforms .btn {
+    clear: both;
+    white-space: nowrap;
+    font-size: 0.8em;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
+    margin: 2px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+#social-platforms .btn:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
+}
+#social-platforms .btn:focus {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+#social-platforms .btn > span,
+#social-platforms .btn.btn-icon > i {
+    float: left;
+    padding: 13px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    line-height: 1em;
+}
+
+#social-platforms .btn > span {
+    padding: 14px 18px 16px;
+    white-space: nowrap;
+    color: #fff;
+    background: #b8b8b8;
+}
+
+#social-platforms .btn:focus > span {
+    background: #9a9a9a;
+}
+
+#social-platforms .btn.btn-icon > i {
+    border-radius: 5px 0 0 5px;
+    position: relative;
+    width: 13px;
+    text-align: center;
+    font-size: 1.25em;
+    color: #fff;
+    background: #212121;
+}
+
+#social-platforms .btn.btn-icon > i:after {
+    content: "";
+    border: 8px solid;
+    border-color: transparent transparent transparent #222;
+    position: absolute;
+    top: 13px;
+    right: -15px;
+}
+#social-platforms .btn > span,
+#social-platforms .btn.btn-icon > i {
+    float: left;
+    padding: 13px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    line-height: 1em;
+}
+
+--Facebook--
+#social-platforms .btn.btn-icon.btn-facebook:hover > i,
+#social-platforms .btn.btn-icon.btn-facebook:focus > i {
+    color: #3b5998;
+}
+#social-platforms .btn.btn-icon.btn-facebook > span {
+    background: #3b5998;
+}
+
+--Twitter--
+#social-platforms .btn.btn-icon.btn-twitter:hover > i,
+#social-platforms .btn.btn-icon.btn-twitter:focus > i {
+    color: #55acee;
+}
+#social-platforms .btn.btn-icon.btn-twitter > span {
+    background: #55acee;
+}
+
+--Pinterest--
+#social-platforms .btn.btn-icon.btn-pinterest:hover > i,
+#social-platforms .btn.btn-icon.btn-pinterest:focus > i {
+    color: #cb2028;
+}
+#social-platforms .btn.btn-icon.btn-pinterest > span {
+    background: #cb2028;
+}
+*/
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+#index_btn .btn-hover {
+    width: 150px;
+    font-size: 16px;
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 30px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+#index_btn .btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+#index_btn .btn-hover:focus {
+    outline: none;
+}
+#index_btn .btn-hover.color-7 {
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+#button_post_detail .btn {
+    width: 120px;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    height: 45px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 30px;
+}
+
 .default-preview-img {
     max-width: 100%;
     height: auto;
 }
 /* カードのスタイル */
-.card .card-body a {
+#detail_of_article .card .card-body a {
     position: relative;
     display: inline-block;
     padding: 17px 20px;
@@ -17,7 +174,7 @@
     font-weight: bold;
 }
 
-.card .card-body .btn {
+#detail_of_article .card .card-body .btn {
     width: 150px;
     font-size: 16px;
     font-weight: 600;
@@ -63,33 +220,15 @@
     transition: all 0.4s ease-in-out;
 }
 
-.button-end .btn {
+.button-end .btn.btn-outline-success {
     width: 250px;
     font-size: 16px;
     font-weight: 600;
 }
 
-.btn:hover {
-    background-position: 100% 0;
-    moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-.btn:focus {
-    outline: none;
-}
-.btn.btn-secondary {
-    background-image: linear-gradient(
-        to right,
-        #6253e1,
-        #852d91,
-        #a3a1ff,
-        #f24645
-    );
-    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-}
 
+        
+         
 .jumbotron {
     background-image: url("World Hacker-logo_.jpg");
     background-size: 100% auto;
@@ -226,9 +365,9 @@ table tbody th {
     }
 }
 
-.list_footer{
-    padding-left : 0;
+.list_footer {
+    padding-left: 0;
 }
-.list_footer li{
-    list-style-type : none;
+.list_footer li {
+    list-style-type: none;
 }

@@ -47,6 +47,9 @@
 
     <!-- Your custom styles (optional) -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    
+
 </head>
 
 <body>
@@ -278,6 +281,30 @@
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
 
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v12.0" nonce="pLOMyQwS"></script>
+
+    <!-- Twitter -->
+    <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+      
+        return t;
+      }(document, "script", "twitter-wjs"));</script>
+
+    <!-- Pinterest -->
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
     
 </body>
 

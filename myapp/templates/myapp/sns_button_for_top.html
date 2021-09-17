@@ -1,0 +1,36 @@
+<div id="social-platforms">
+
+    <!--
+
+    <a class="btn btn-icon btn-facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&description={{ object.title }} - ぎょうざブログ"
+        target="_blank" rel="nofollow">
+        <span>Facebook <i class="fab fa-facebook"></i></span>
+    </a>
+
+    <a class="btn btn-icon btn-twitter"
+        href="https://twitter.com/share?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&text={{ object.title }} - ぎょうざブログ"
+        target="_blank" rel="nofollow">
+        <span>Twitter <i class="fab fa-twitter"></i></span>
+    </a>
+
+    <a class="btn btn-icon btn-pinterest"
+        href="https://pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ"
+        target="_blank" rel="nofollow">
+        <span>Pinterest <i class="fab fa-pinterest"></i></i></span>
+    </a>
+
+    -->
+    <div rel="nofollow" target="_blank" class="fb-like"
+        data-href="{{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}" data-width=""
+        data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+    <a rel="nofollow" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.title }} - ぎょうざブログ" data-size="small">
+        Tweet</a>
+    
+    <a data-pin-do="buttonPin" data-pin-tall="true"
+        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
+    </a>
+
+    
+</div>
