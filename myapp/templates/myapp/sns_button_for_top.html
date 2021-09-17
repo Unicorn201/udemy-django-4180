@@ -28,8 +28,8 @@
     <a rel="nofollow" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.title }} - ぎょうざブログ" data-size="small">
         Tweet</a>
     
-    <a data-pin-do="buttonPin" data-pin-tall="true"
-        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}.s3.amazonaws.com/{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
+    <a data-pin-do="buttonPin" data-pin-tall="true" target="_blank" rel="nofollow"
+        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
     </a>
 
     

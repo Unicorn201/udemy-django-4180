@@ -8,20 +8,11 @@
 #profile_about_gyoza a{
     margin-left: -15px;
 }
-/*
-#social-platforms .btn {
-    clear: both;
-    white-space: nowrap;
-    font-size: 0.8em;
-    display: inline-block;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
-    margin: 2px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-    overflow: hidden;
+
+#social-platforms {
+  margin-top: 50px;
 }
+/*
 #social-platforms .btn:hover {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
 }
