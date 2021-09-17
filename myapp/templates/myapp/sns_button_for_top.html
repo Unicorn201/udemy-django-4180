@@ -29,7 +29,7 @@
         Tweet</a>
     
     <a data-pin-do="buttonPin" data-pin-tall="true"
-        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
+        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ request.scheme }}://{{ request.get_host }}.s3.amazonaws.com/{{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
     </a>
 
     

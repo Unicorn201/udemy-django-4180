@@ -35,6 +35,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ request.site.siteconfig.meta_title }}</title>
     <meta name="description" content="こちらはぎょうざの、ぎょうざによる、ぎょうざのためのブログです。今日からあなたもWorld Hacker！"/> 
+    <meta name="keywords" content="Car, car, self-make_PC, gyoza, invest, content, management, system, Android, android"/>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -47,7 +48,14 @@
 
     <!-- Your custom styles (optional) -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    
+    <!-- Facebook:カード用-->
+    <meta property="og:title" content="{{ object.title }}"/>
+    <meta property="og:description" content="{{ object.content }}"/>
 
+    <!-- Facebook:カード用-->
+    <meta property="twitter:title" content="{{ object.title }}"/>
+    <meta property="twitter:description" content="{{ object.content }}"/>
     
 
 </head>
