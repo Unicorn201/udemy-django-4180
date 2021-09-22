@@ -11,10 +11,10 @@
         <div class="card" id="detail_of_article">
 
             <!-- Card image -->
-            {% if object.thumbnail %W}
-            <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{% static 'web_image_null.jpeg' %}">
+            {% if object.thumbnail %}
+            <img src="{{ object.thumbnail.url | default_if_none:'#' }}" class="card-img-top" alt="{% static 'web_image_null.jpeg' %}">
             {% else %}
-            <img src="{{ static 'web_image_null.jpeg' | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
+            <img src="{% static 'web_image_null.jpeg' %}" class="card-img-top" alt="{{ object.title }}">
             {% endif %}
             <!-- Card content -->
             <div class="card-body" id="button_post_detail">
