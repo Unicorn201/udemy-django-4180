@@ -197,3 +197,13 @@ if not DEBUG:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     # DEFAULT_FILE_STORAGE = 'myproject.backends.MediaStorage'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+
+    from django.views.decorators.csrf import requires_csrf_token
+    from django.http import (HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotFound,HttpResponseServerError,)
+    @requires_csrf_token
+    def my_customized_server_error(request, template_name='500.html'):
+        import sys
+        from django.views import debug
+        error_html = debug.technical_500_response(request, *sys.exc_info()).content
+        return HttpResponseServerError(error_html)
