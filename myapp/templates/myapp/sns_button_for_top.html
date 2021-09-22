@@ -7,10 +7,12 @@
 
     <a rel="nofollow" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.title }} - ぎょうざブログ" data-size="large">
         Tweet</a>
-    
+    <br>
+
     <a data-pin-do="buttonBookmark" data-pin-tall="true" target="_blank" rel="nofollow"
         href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
     </a>
 
-    
+    <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" data-hatena-bookmark-width="100" data-hatena-bookmark-height="30" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
 </div>

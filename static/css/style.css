@@ -8,6 +8,10 @@
 #social-platforms .twitter-share-button{
     margin: -7px;
 }
+#social-platforms .hatena-bookmark-button{
+    margin: -7px;
+}
+
 
 * {
     -webkit-box-sizing: border-box;
