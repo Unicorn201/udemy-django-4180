@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'sitemanage',
     'storages',
     'django.forms',

@@ -13,6 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib.sitemaps.views import sitemap
+from myapp.sitemaps import PostSitemap, StaticSitemap
+
+sitemaps = {
+    'post': PostSitemap,
+    #'category':BlogCategorySitemap,
+    'static': StaticSitemap,    
+}
+
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -23,9 +33,11 @@ admin.site.index_title = 'メニュー'
 admin.site.disable_action('delete_selected')
 
 
+
 urlpatterns = [
     path('staff-admin/', admin.site.urls),
     path('', include('myapp.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
 
 
