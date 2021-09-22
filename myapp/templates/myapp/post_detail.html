@@ -12,7 +12,7 @@
 
             <!-- Card image -->
             {% if object.thumbnail %}
-            <img src="{{ object.thumbnail.url | default_if_none:'#' }}" class="card-img-top" alt="{% static 'web_image_null.jpeg' %}">
+            <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{% static 'web_image_null.jpeg' %}">
             {% else %}
             <img src="{% static 'web_image_null.jpeg' %}" class="card-img-top" alt="{{ object.title }}">
             {% endif %}
