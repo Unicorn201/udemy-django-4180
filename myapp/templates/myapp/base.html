@@ -33,8 +33,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ request.site.siteconfig.meta_title }}</title>
-    <meta name="description" content="ぎょうざの、ぎょうざによる、ぎょうざのためのブログになります。あなたもWorld Hackerになりませんか？"> 
+    <title>{% block title %}{{ request.site.siteconfig.meta_title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}ぎょうざの、ぎょうざによる、ぎょうざのためのブログになります。あなたもWorld Hackerになりませんか？{% endblock %}"> 
     <meta name="keywords" content="Car, car, self-make_PC, gyoza, invest, content, management, system, Android, android">
 
     <!-- Font Awesome -->
