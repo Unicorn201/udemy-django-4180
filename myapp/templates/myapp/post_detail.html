@@ -11,7 +11,7 @@
         <div class="card" id="detail_of_article">
 
             <!-- Card image -->
-            {% if object.thumbnail %W}
+            {% if object.thumbnail %}
             <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{% static 'web_image_null.jpeg' %}">
             {% else %}
             <img src="{{ static 'web_image_null.jpeg' | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
