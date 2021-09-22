@@ -1,4 +1,5 @@
 {% extends 'myapp/base.html' %}
+{% load static %}
 
 {% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
@@ -13,8 +14,8 @@
             {% if object.thumbnail %}
             <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
             {% else %}
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/46.jpg"
-                        alt="{{ item.title }}"/>
+            <img class="card-img-top" src="{% static 'web_image_null.jpg' %}"
+                        alt="{{ object.title }}"/>
             {% endif %}
             <!-- Card content -->
             <div class="card-body" id="button_post_detail">
