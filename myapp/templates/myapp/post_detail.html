@@ -11,12 +11,12 @@
         <div class="card" id="detail_of_article">
 
             <!-- Card image -->
-            {% if object.thumbnail %}
+            {% if object.thumbnail %W}
             <img src="{{ object.thumbnail.url | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
             {% else %}
-            <img class="card-img-top" src="{% static 'web_image_null.jpg' %}"
-                        alt="{{ object.title }}"/>
+            <img src="{{ static 'web_image_null.jpg' | default_if_none:'#'  }}" class="card-img-top" alt="{{ object.title }}">
             {% endif %}
+
             <!-- Card content -->
             <div class="card-body" id="button_post_detail">
 
