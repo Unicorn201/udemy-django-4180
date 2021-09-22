@@ -57,7 +57,7 @@
                 <div class="view overlay">
                     {% if item.thumbnail %}
                     <img class="card-img-top" src="{{ item.thumbnail.url | default_if_none:'#' }}"
-                        alt="{{ item.title }}" />
+                        alt="{% static 'web_image_null.jpg' %}" />
                     {% else %}
                     <img class="card-img-top" src="{% static 'web_image_null.jpg' %}"
                         alt="{{ item.title }}" />
