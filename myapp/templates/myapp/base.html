@@ -34,8 +34,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ request.site.siteconfig.meta_title }}</title>
-    <meta name="description" content="{{ request.site.siteconfig.meta_description }}"/> 
-    <meta name="keywords" content="Car, car, self-make_PC, gyoza, invest, content, management, system, Android, android"/>
+    <meta name="description" content="{% request.site.siteconfig.meta_description %}"> 
+    <meta name="keywords" content="Car, car, self-make_PC, gyoza, invest, content, management, system, Android, android">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -50,12 +50,12 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     
     <!-- Facebook:カード用-->
-    <meta property="og:title" content="{{ object.title }}"/>
-    <meta property="og:description" content="{{ object.content }}"/>
+    <meta property="og:title" content="{{ object.title }}">
+    <meta property="og:description" content="{{ object.content }}">
 
     <!-- Twitter:カード用-->
-    <meta property="twitter:title" content="{{ object.title }}"/>
-    <meta property="twitter:description" content="{{ object.content }}"/>
+    <meta property="twitter:title" content="{{ object.title }}">
+    <meta property="twitter:description" content="{{ object.content }}">
     
 
 </head>
