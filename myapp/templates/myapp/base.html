@@ -3,7 +3,7 @@
 
 <html lang="ja">
 
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-202046552-1"></script>
@@ -49,13 +49,17 @@
     <!-- Your custom styles (optional) -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     
-    <!-- Facebook:カード用-->
+    <!-- Facebook, Twitter共通 -->
     <meta property="og:title" content="{{ object.title }}">
+    <meta property="og:type" content="article">
     <meta property="og:description" content="{{ object.content }}">
+    
+    <meta property="og:image" content="{{ object.thumbnail.url }}">
 
-    <!-- Twitter:カード用-->
-    <meta property="twitter:title" content="{{ object.title }}">
-    <meta property="twitter:description" content="{{ object.content }}">
+    <!-- Facebook:カード用 -->
+
+    <!-- Twitter:カード用 -->
+    <meta name='twitter:card' content='summary'>
     
 
 </head>
