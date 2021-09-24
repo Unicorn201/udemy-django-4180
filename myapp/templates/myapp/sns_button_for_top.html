@@ -1,20 +1,13 @@
-<div id="social-platforms">
 
-    <div rel="nofollow" target="_blank" class="fb-like"
-        data-href="{{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}" data-width=""
-        data-layout="button_count" data-action="like" data-size="large" data-share="true">
-    </div>
-
-    <a rel="nofollow" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.title }} - ぎょうざブログ" data-size="large">
-        Tweet</a>
-    <br>
-    
-    {% if object.thumbnail %}
-    <a data-pin-do="buttonBookmark" data-pin-tall="true" target="_blank" rel="nofollow"
-        href="https://www.pinterest.com/pin/create/button/?url={{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}&media={{ object.thumbnail.url }}&description={{ object.title }} - ぎょうざブログ">
-    </a>
-    {% endif %}
-
-    <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" data-hatena-bookmark-width="100" data-hatena-bookmark-height="30" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-
+<div class="ninja_onebutton">
+    <script type="text/javascript">
+    //<![CDATA[
+    (function(d){
+    if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_d4de3d224cc9c47b8036b598ee24e8b5)=='undefined'){
+        document.write("<sc"+"ript type='text\/javascript' src='\/\/omt.shinobi.jp\/b\/d4de3d224cc9c47b8036b598ee24e8b5'><\/sc"+"ript>");
+    }else{
+        window.NINJA_CO_JP_ONETAG_BUTTON_d4de3d224cc9c47b8036b598ee24e8b5.ONETAGButton_Load();}
+    })(document);
+    //]]>
+    </script><span class="ninja_onebutton_hidden" style="display:none;">{{ request.scheme }}://{{ request.get_host }}{% url 'myapp:post_detail' object.pk %}</span><span style="display:none;" class="ninja_onebutton_hidden">{{ object.title }}</span>
 </div>

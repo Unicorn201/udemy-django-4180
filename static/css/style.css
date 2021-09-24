@@ -2,14 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 
 
-#social-platforms {
-    margin-top: 50px;
-}
-#social-platforms .twitter-share-button{
-    margin: -7px;
-}
-#social-platforms .hatena-bookmark-button{
-    margin: -7px;
+.ninja_onebutton{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 
