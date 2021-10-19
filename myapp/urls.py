@@ -13,6 +13,9 @@ urlpatterns = [
     path('mypage/', mypage_site.urls),
 
     path('', views.Index.as_view(), name='index'),
+    path('ads.txt', TemplateView.as_view(
+                                template_name='myapp/ads.txt', content_type='text/plain'
+                             )),  # 追加
     # path('', include('mayapp.urls')),
     path('post_create', views.PostCreate.as_view(), name='post_create'),
     # ↓投稿記事の入力内容の確認画面を追加
