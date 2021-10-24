@@ -3,7 +3,7 @@ from .models import Post
 from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from django.core.mail import BadHeaderError, EmailMessage
+from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 # from .widgets import FileInputWithPreview
 
@@ -60,7 +60,7 @@ class ContactForm(forms.Form):
             'placeholder': "お名前"
         })
     )
-    email_address = forms.EmailField(
+    email = forms.EmailField(
         label='',
         widget=forms.EmailInput(attrs={
             'class': 'form-control',
@@ -76,18 +76,16 @@ class ContactForm(forms.Form):
     )
 
     def send_email(self):
-        # subject = "お問い合わせ"
         name = self.cleaned_data['name']
-        email_address = self.cleaned_data['email_address']
-        inquiry = self.cleaned_data['inquiry']
-        from_email = '{name} <{email}>'.format(name = name, email = email_address)
+        email = self.cleaned_data['email']
+        message = self.cleaned_data['inquiry']
+        
+        subject = name + "様からのお問い合わせ"
+        from_email = '{name} <{email}>'.format(name=name, email=email)
         recipient_list = [settings.EMAIL_HOST_USER]  # 受信者リスト
+
         try:
-            # send_mail(subject = name + "様からの問い合わせ", message = inquiry, from_email = from_email, recipient_list = recipient_list)
-            message = EmailMessage(subject = name + "様からの問い合わせ", body = inquiry, from_email = from_email, to = recipient_list,)
-                                    # cc = [from_email],
-            #                     )
-            message.send()
+            send_mail(subject, message, from_email, recipient_list) 
 
         except BadHeaderError:
             return HttpResponse("無効なヘッダが検出されました。")
