@@ -91,7 +91,7 @@ class ContactForm(forms.Form):
             return HttpResponse("無効なヘッダが検出されました。")
 
     def clean_message(self):
-        message = self.cleaned_data['message']
+        message = self.cleaned_data['inquiry']
         if(message.find('<') != -1 or message.find('>') != -1):
             raise forms.ValidationError("恐れ入りますが問い合わせ内容でのタグ利用はお控えください。")
         return message
