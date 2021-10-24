@@ -159,7 +159,7 @@ ALLOWED_HOSTS = ['127.0.0.1','udemy-django-4180.herokuapp.com','gyoza-hungry-foo
 
 
 # 開発環境のときにメール送信内容をコンソールに表示する
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 

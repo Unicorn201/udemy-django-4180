@@ -3,7 +3,7 @@ from .models import Post
 from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from django.core.mail import BadHeaderError, send_mail, EmailMessage
+from django.core.mail import BadHeaderError, EmailMessage
 from django.http import HttpResponse
 # from .widgets import FileInputWithPreview
 
