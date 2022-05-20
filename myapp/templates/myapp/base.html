@@ -53,14 +53,16 @@
     <meta property="og:title" content="{{ object.title }}">
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{ object.content }}">
-    
+    {% if object.thumbnail %}
     <meta property="og:image" content="{{ object.thumbnail.url }}">
-
+    {% endif %}
     <!-- Facebook:カード用 -->
 
     <!-- Twitter:カード用 -->
     <meta name="twitter:card" content="summary">
+    {% if object.thumbnail %}
     <meta name="twitter:image" content="{{ object.thumbnail.url }}">
+    {% endif %}
 
 </head>
 
