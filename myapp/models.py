@@ -21,8 +21,8 @@ class Category(models.Model):
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
-    title = models.CharField('タイトル', max_length=50)
-    content = models.TextField('内容', max_length=1000)
+    title = models.CharField('タイトル', max_length=100)
+    content = models.TextField('内容', max_length=10000)
     category = models.ForeignKey('Category', on_delete=models.PROTECT)
     thumbnail = models.ImageField(upload_to='images/', blank=True)
     thumbnail_preview = ImageSpecField(source='thumbnail',
